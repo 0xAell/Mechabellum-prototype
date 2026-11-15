@@ -4,17 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 127.0.0.1",
     "build": "tsc && vite build",
     "build:hosting": "npm run build && node scripts/prepareHosting.js",
     "test:sim": "tsc -p tsconfig.sim.json && node .sim-dist/scripts/testGameplayScenarios.js",
     "test": "npm run build && npm run test:sim",
     "sim": "tsc -p tsconfig.sim.json && node .sim-dist/scripts/simulateMatch.js",
     "sim:ai": "tsc -p tsconfig.sim.json && node .sim-dist/scripts/simulateAiVsAi.js",
-    "preview": "vite preview"
+    "preview": "vite preview --host 127.0.0.1"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "7.3.8"
   }
 }
